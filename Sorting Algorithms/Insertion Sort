@@ -1,0 +1,17 @@
+// Thuật toán sắp xếp chèn
+// Xét một dãy con đã được sắp xếp trong mảng, đưa các phần tử không đúng thứ tự về vị trí đúng của nó
+// Độ phức tạp O(n^2)
+
+
+void insertionSort(int a[], int n){
+	int index, value;
+	for (int i = 1; i < n; i++){
+		index = i;
+		value = a[i];
+		while (index > 0 && a[index - 1] > value){
+			a[index] = a[index - 1];
+			index --;
+		}
+		a[index] = value;
+	}
+} 
