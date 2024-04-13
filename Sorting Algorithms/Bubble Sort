@@ -1,0 +1,19 @@
+// Thuật toán sắp xếp nổi bọt
+// Đổi chỗ hai phần tử liền kề nhau nếu không đúng thứ tự
+// Độ phức tạp O(n^2)
+void bubbleSort(int a[], int n){
+	for (int i = n-1; i >= 1; i--){
+		bool swapped= true;
+		for (int j = 0; j < i; j++){
+			if (a[j] > a[j+1]){
+				int temp = a[j];
+				a[j] = a[j+1];
+				a[j+1] = temp;
+				swapped = false;
+			}
+		}
+		if (swapped){
+			break;
+		}
+	}
+}
