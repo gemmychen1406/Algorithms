@@ -1,0 +1,19 @@
+// Thuật toán sắp xếp chọn
+// Tìm phần tử nhỏ nhất đưa về vị trí đầu
+// Độ phức tạp O(n^2)
+void selectionSort(int a[], int n){
+	int indexMin;
+	for (int i = 0; i < n-1; i++){
+		indexMin = i;
+		for (int j = i+1; j < n; j++){
+			if (a[indexMin] > a[j]){
+				indexMin = j;
+			}
+		}
+		if (i != indexMin){
+			int temp = a[i];
+			a[i] = a[indexMin];
+			a[indexMin] = temp;
+		}
+	}
+} 
