@@ -1,0 +1,16 @@
+// Thuật toán tham lam
+// Không phải trong bài toán nào cũng đúng
+// Sắp xếp dãy tăng (đối với bài chia nhỏ) hoặc giảm (đối với bài toán tìm tối đa)
+// Độ phức tạp O(n)
+
+// Bài toán Đổi tiền : đổi một khoản tiền ra tiền mặt sao cho số lượng tờ tiền nhỏ nhất
+ int change_money(int m){
+    int tien[9]= {500, 200, 100, 50, 20, 10, 5, 2, 1};
+    int sl = 0;
+    for (int i = 0; i < 9; i++)
+        while(m >= tien[i]){
+            sl++;
+            m -= tien[i];
+        }
+    return sl;
+  }
