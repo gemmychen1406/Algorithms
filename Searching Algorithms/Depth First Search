@@ -1,12 +1,12 @@
 // Thuật toán tìm kiếm theo chiều sâu (đồ thị)
 // Đưa đồ thị về dạng Danh sách kề để duyệt (để độ phức tạp đạt nhỏ nhất)
-// Lý giải thuật toán bằng Stack, chứa nội dung Quay lui
+// Lý giải thuật toán bằng Stack, sử dụng Quay lui, Đệ quy
 
 int u, v; // đồ thị có u đỉnh và v cạnh
 vector<int> a[1001];
 bool visited[1001];
-void dsc_dsk(int u){
-    	for (int i = 0; i < u; i++){
+void dsc_dsk(int u, int v){
+    	for (int i = 0; i < v; i++){
       		int x, y;
       		cin >> x >> y;
       		a[x].push_back(y);
@@ -25,7 +25,7 @@ int main(){
     	ios_base::sync_with_stdio(false);
     	cin.tie(NULL);
     	cout.tie(NULL);
-    	cin >> u;
-    	dsc_dsk(u);
+    	cin >> u >> v;
+    	dsc_dsk(u, v);
     	dfs(1);
 }
