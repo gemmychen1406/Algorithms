@@ -1,0 +1,40 @@
+// Thuật toán quay lui
+// Dùng với các bài tạo cấu hình
+
+// Bài toán xếp n quân hậu
+int n, a[n];
+int cnt = 0;
+void Queen(int a[], int row, int n){
+    if (row == n) {
+          cnt++;
+          // Nếu muốn in cấu hình:
+          for (int i = 0; i < n; i++){
+                for (int j = 0; j < n; j++){
+                      if (j == a[i]) cout << "x ";
+                      else cout << "o ";
+                }
+                cout << "\n";
+          }
+          cout << "\n"
+          return;
+    }
+    else {
+          for (int i = 0; i < n; i++){
+                int check = 1;
+                for (int j = 0; j < row; j++)
+                      if (i == a[j] || i == a[j] - j + row || i == a[j] + j - row) check = 0;
+                if(check) {
+                      a[row] = i;
+                      Queen(a, row + 1, n);
+                }
+          }
+    }
+}
+int main(){
+  	ios_base::sync_with_stdio(false);
+  	cin.tie(NULL);
+  	cout.tie(NULL);
+  	cin >> n;
+  	Queen(a, 0, n);
+  	cout << cnt;
+}
