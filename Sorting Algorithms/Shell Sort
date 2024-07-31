@@ -1,0 +1,15 @@
+//Phát triển từ thuật toán sắp xếp chèn (Inserting Sort)
+//Sắp xếp các phần tử cách nhau một khoảng bằng n/2, n/4, n/8,...
+//Độ phức tạp O(n)
+
+void shellSort(int a[], int n){
+    int temp;
+    for (int interval = n / 2; interval > 0; interval /= 2){
+        for (int i = interval; i < n; i++){
+            temp = a[i];
+            int j;
+            for (j = i; j >= interval && a[j - interval] > temp; j -= interval) a[j] = a[j - interval];
+            a[j] = temp;
+        }
+    }
+}
