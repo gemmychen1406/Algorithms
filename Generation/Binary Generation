@@ -1,0 +1,9 @@
+// Thuật toán sinh ra dãy số nhị phân tăng dần có n chữ số
+void BiGen(int n, string s){
+	if (n == 0) cout << s << " ";
+	else {
+		for (int i = 0; i <= 1; i++){
+			BiGen(n-1, s + char(i + '0'));
+		}
+	}
+}
