@@ -1,0 +1,24 @@
+// Thuật toán sinh các chuỗi hoán vị có n chữ số
+// Quay lui
+int b[10] = {0};
+int x[10];
+void printArray(int a[], int n){
+	for (int i = 1; i <= n; i++){
+		cout << a[i];
+	}
+	cout <<" ";
+}
+void Permutation(int k, int n){
+	for (int i = 1; i <= n; i++){
+		if (b[i] == 0){
+			x[k] = i;
+			if (k == n){
+				printArray(x, n);
+			} else {
+				b[i] = 1;
+				Permutation(k+1, n);
+				b[i] = 0;
+			}
+		}
+	}
+}
