@@ -1,6 +1,6 @@
 //Phát triển từ thuật toán sắp xếp chèn (Inserting Sort)
 //Sắp xếp các phần tử cách nhau một khoảng bằng n/2, n/4, n/8,...
-//Độ phức tạp O(n)
+//Độ phức tạp O(n^2)
 
 void shellSort(int a[], int n){
     int temp;
