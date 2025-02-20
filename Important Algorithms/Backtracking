@@ -2,7 +2,7 @@
 // Dùng với các bài tạo cấu hình
 
 // Bài toán xếp n quân hậu
-int n, a[n];
+int n, a[20];
 int cnt = 0;
 void Queen(int a[], int row, int n){
     if (row == n) {
